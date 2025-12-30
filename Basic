@@ -1,0 +1,112 @@
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000000000000000000000000000000000000..81d44597f053b1621835f79f8e7eeffbb517fd55
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,17 @@
++# Dependencies
++node_modules/
++.pnpm-store/
++venv/
++.env
++
++# Logs
++npm-debug.log*
++yarn-debug.log*
++yarn-error.log*
++pnpm-debug.log*
++
++# Build artifacts
++/dist
++/build
++coverage/
++.DS_Store
+
+AGENTS.md
+
+diff --git a/AGENTS.md b/AGENTS.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..b8689484d14e41dcff3817f595d05694675fae59
+--- /dev/null
++++ b/AGENTS.md
+@@ -0,0 +1,14 @@
++# Contributor Guidance
++
++## Scope
++These instructions apply to the entire repository unless superseded by a nested `AGENTS.md` file.
++
++## Working agreements
++- Run `npm test` after modifying JavaScript files.
++- Prefer `pnpm` when installing dependencies.
++- Confirm with stakeholders before adding new production dependencies.
++
++## Repository conventions
++- Keep documentation up to date when adding new components or services.
++- Use clear, action-oriented commit messages.
++- Favor small, focused pull requests with passing tests.
+
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..170bc8537f43cf648b222ac54762db44fe0bba3a
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,28 @@
++# DiCello-Levitt Document Vault
++
++This repository is the starting point for the Document Vault project. It includes contribution guidance, a simple directory layout, and placeholders for the frontend and backend implementations so collaborators can start coding immediately.
++
++## Getting started
++1. Clone or pull the repository.
++2. Review [`AGENTS.md`](AGENTS.md) for conventions and working agreements.
++3. Choose the service to work on and follow the notes in its README.
++
++## If you're new to GitHub or coding
++Use these steps to add files gradually instead of trying to paste everything at once:
++1. Decide which folder your change belongs in (for example, `frontend/` for client code or `backend/` for APIs).
++2. Create or open a single file in that folder and add your content.
++3. Save the file, then run any relevant tests (for JavaScript changes, run `npm test`).
++4. Use `git add <file>` to stage just that file, then `git commit -m "Describe your change"`.
++5. Repeat for the next file. Smaller, focused commits make it easier to review and fix issues.
++
++If you're unsure where to place a file, add a short note to the file explaining the intent and commit it. Future contributors can help reorganize as the project grows.
++
++## Repository structure
++- `frontend/` – Placeholder for client-side code.
++- `backend/` – Placeholder for server-side code and APIs.
++- `AGENTS.md` – Repository-wide guidance for contributors.
++
++## Next steps
++- Add technology-specific tooling (frameworks, linters, formatters) to each service directory.
++- Define API contracts and data models before implementing features.
++- Create nested `AGENTS.md` files if a subproject requires different rules.
+
+diff --git a/backend/README.md b/backend/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..994b6d97e12f1447e9bf148a3ad4c0e44ec812de
+--- /dev/null
++++ b/backend/README.md
+@@ -0,0 +1,8 @@
++# Backend
++
++This directory will contain server-side code for the Document Vault. Add a nested `AGENTS.md` here if the backend needs additional rules or conventions.
++
++Suggested next steps:
++- Select a backend framework (e.g., Express, FastAPI, Rails).
++- Define API routes and data models.
++- Add automated tests and CI hooks.
+
+diff --git a/frontend/README.md b/frontend/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..4a48676d6fbf170e299bb9450374f29eeb1aab0b
+--- /dev/null
++++ b/frontend/README.md
+@@ -0,0 +1,8 @@
++# Frontend
++
++This directory will hold the client application for the Document Vault. Create a nested `AGENTS.md` if the frontend requires custom guidance.
++
++Suggested next steps:
++- Choose a framework (e.g., React, Vue, Svelte).
++- Define routing, state management, and UI component standards.
++- Configure testing and linting tools alongside the chosen stack.
+
