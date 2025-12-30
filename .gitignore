@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+venv/
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build artifacts
+/dist
+/build
+coverage/
+.DS_Store
