@@ -478,6 +478,38 @@ export default function HomePage() {
             >
               Confirm uploads
             </button>
+
+            {documents.length > 0 && (
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-semibold">Vault preview</h3>
+                  <span className="text-xs text-slate-600">{documents.length} file(s) ready</span>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="min-w-full text-sm">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="p-2 text-left">File name</th>
+                        <th className="p-2 text-left">Size</th>
+                        <th className="p-2 text-left">Status</th>
+                        <th className="p-2 text-left">Included</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {documents.map((doc) => (
+                        <tr key={doc.id} className="border-b">
+                          <td className="p-2 font-semibold">{doc.fileName}</td>
+                          <td className="p-2 text-slate-600">{formatSize(doc.size)}</td>
+                          <td className="p-2">{doc.status}</td>
+                          <td className="p-2">{doc.include ? 'Yes' : 'No'}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-slate-600">Files are already in the Vault table below—confirm to proceed.</p>
+              </div>
+            )}
           </div>
         )}
 
